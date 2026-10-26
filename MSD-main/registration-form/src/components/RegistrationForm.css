@@ -1,0 +1,19 @@
+.container {
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid wheat;
+    border-radius: 8px;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}

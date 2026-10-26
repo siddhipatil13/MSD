@@ -1,0 +1,20 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background: #f6f8fb;
+  margin: 0;
+  padding: 24px;
+  color: #0d2b52;
+}
+header {
+  background: #0d2b52;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+section {
+  background: #fff;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid #dde4ec;
+  border-radius: 8px;
+}

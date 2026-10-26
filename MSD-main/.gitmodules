@@ -1,0 +1,3 @@
+[submodule "MSD_Project/LearnSphere"]
+	path = MSD_Project/LearnSphere
+	url = https://github.com/sakshi21pawar/LearnSphere.git

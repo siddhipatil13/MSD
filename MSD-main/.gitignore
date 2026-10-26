@@ -1,0 +1,17 @@
+node_modules/
+**/node_modules/
+
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+
+*.local
+*.log
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+coverage/
+**/coverage/

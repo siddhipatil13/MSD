@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Management</title>
+</head>
+
+<body>
+
+    <h1>Student Management System</h1>
+
+    <h2>Add Student</h2>
+
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="number" id="age" placeholder="Enter age">
+    <input type="text" id="course" placeholder="Enter course">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <h2>Students</h2>
+
+    <button onclick="getStudents()">View Students</button>
+
+    <div id="students"></div>
+
+
+    <script>
+
+        async function addStudent() {
+
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const course = document.getElementById("course").value;
+
+            const response = await fetch("/students", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name: name,
+                    age: age,
+                    course: course
+                })
+            });
+
+            const data = await response.json();
+
+            alert(data.message);
+
+            getStudents();
+        }
+
+
+        async function getStudents() {
+
+            const response = await fetch("/students");
+
+            const students = await response.json();
+
+            let output = "";
+
+            students.forEach(student => {
+
+                output += `
+                    <p>
+                        ${student.name} |
+                        Age: ${student.age} |
+                        Course: ${student.course}
+
+                        <button onclick="deleteStudent(${student.id})">
+                            Delete
+                        </button>
+                    </p>
+                `;
+            });
+
+            document.getElementById("students").innerHTML = output;
+        }
+
+
+        async function deleteStudent(id) {
+
+            const response = await fetch(`/students/${id}`, {
+
+                method: "DELETE"
+
+            });
+
+            const data = await response.json();
+
+            alert(data.message);
+
+            getStudents();
+        }
+
+    </script>
+
+</body>
+
+</html>

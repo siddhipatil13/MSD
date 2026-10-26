@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EJS Demo | CSE Department</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1><%= department %></h1>
+    <p><%= college %></p>
+  </header>
+
+  <section>
+    <h2>Academic Years</h2>
+    <ul>
+      <% years.forEach(function (y) { %>
+        <li><%= y %></li>
+      <% }) %>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Current Student</h2>
+    <p>Name: <strong><%= student.name %></strong></p>
+    <p>Branch: <strong><%= student.branch %></strong></p>
+  </section>
+
+  <footer>
+    <p>Server-rendered page using the EJS template engine.</p>
+  </footer>
+</body>
+</html>
